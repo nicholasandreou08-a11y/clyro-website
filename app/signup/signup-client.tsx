@@ -15,10 +15,18 @@ const trustBadges = [
 ];
 
 export function SignupPageClient({ language }: { language: Language }) {
+  return (
+    <PageShell language={language}>
+      <SignupContent />
+    </PageShell>
+  );
+}
+
+function SignupContent() {
   const { t } = useLanguage();
 
   return (
-    <PageShell language={language}>
+    <>
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-24">
         {/* Left: signup CTA */}
         <div className="flex flex-col justify-center">
@@ -85,6 +93,6 @@ export function SignupPageClient({ language }: { language: Language }) {
           </div>
         </div>
       </section>
-    </PageShell>
+    </>
   );
 }

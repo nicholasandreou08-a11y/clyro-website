@@ -1,9 +1,7 @@
 "use client";
 
 import { PageShell } from "@/components/page-shell";
-import { FeaturesGrid } from "@/components/features-grid";
 import { ProductTabs } from "@/components/product-tabs";
-import { BuiltForSection } from "@/components/built-for-section";
 import { CtaBanner } from "@/components/cta-banner";
 import { useLanguage } from "@/components/language-context";
 import {
@@ -182,10 +180,18 @@ const detailedFeatures = [
 ];
 
 export function FeaturesPageClient({ language }: { language: Language }) {
+  return (
+    <PageShell language={language}>
+      <FeaturesContent />
+    </PageShell>
+  );
+}
+
+function FeaturesContent() {
   const { language: lang, t } = useLanguage();
 
   return (
-    <PageShell language={language}>
+    <>
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-16 text-center sm:px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-blue-dark)]">
@@ -253,6 +259,6 @@ export function FeaturesPageClient({ language }: { language: Language }) {
 
       {/* CTA */}
       <CtaBanner />
-    </PageShell>
+    </>
   );
 }

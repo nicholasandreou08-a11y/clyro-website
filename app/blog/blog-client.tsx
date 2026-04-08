@@ -6,10 +6,18 @@ import { useLanguage } from "@/components/language-context";
 import type { Language } from "@/lib/site-data";
 
 export function BlogPageClient({ language }: { language: Language }) {
+  return (
+    <PageShell language={language}>
+      <BlogContent />
+    </PageShell>
+  );
+}
+
+function BlogContent() {
   const { t } = useLanguage();
 
   return (
-    <PageShell language={language}>
+    <>
       <section className="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-blue-dark)]">
           {t({ gr: "Blog", en: "Blog" })}
@@ -31,6 +39,6 @@ export function BlogPageClient({ language }: { language: Language }) {
         </div>
       </section>
       <CtaBanner />
-    </PageShell>
+    </>
   );
 }

@@ -33,10 +33,18 @@ const contactMethods = [
 ];
 
 export function ContactPageClient({ language }: { language: Language }) {
+  return (
+    <PageShell language={language}>
+      <ContactContent />
+    </PageShell>
+  );
+}
+
+function ContactContent() {
   const { t } = useLanguage();
 
   return (
-    <PageShell language={language}>
+    <>
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-16 text-center sm:px-6 lg:px-8">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-blue-dark)]">
@@ -164,6 +172,6 @@ export function ContactPageClient({ language }: { language: Language }) {
           {t({ gr: "Φτιαγμένο στην Κύπρο", en: "Made in Cyprus" })}
         </div>
       </div>
-    </PageShell>
+    </>
   );
 }

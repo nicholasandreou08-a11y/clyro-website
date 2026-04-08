@@ -17,6 +17,14 @@ export function ProfessionPageClient({
   language: Language;
   profession: Profession;
 }) {
+  return (
+    <PageShell language={language}>
+      <ProfessionContent profession={profession} />
+    </PageShell>
+  );
+}
+
+function ProfessionContent({ profession }: { profession: Profession }) {
   const { t } = useLanguage();
   const profData = professions.find((p) => p.key === profession) ?? professions[0];
 
@@ -27,7 +35,7 @@ export function ProfessionPageClient({
   ];
 
   return (
-    <PageShell language={language}>
+    <>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
@@ -92,6 +100,6 @@ export function ProfessionPageClient({
       <FeaturesGrid />
       <ProductTabs />
       <CtaBanner />
-    </PageShell>
+    </>
   );
 }
