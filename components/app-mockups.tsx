@@ -416,6 +416,256 @@ export function DashboardMockup({ className }: { className?: string }) {
 /* Billing Mockup                                                      */
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/* Inbox / Communication Mockup                                       */
+/* ------------------------------------------------------------------ */
+
+export function InboxMockup({ className }: { className?: string }) {
+  const { t } = useLanguage();
+
+  const threads = [
+    { name: "Maria P.", emoji: "👩", preview: t({ gr: "Σας ευχαριστώ, θα...", en: "Thank you, I will..." }), status: t({ gr: "Ανοιχτό", en: "Open" }), statusColor: "#3B82F6", channel: "Email", unread: true },
+    { name: "Andreas K.", emoji: "👨", preview: t({ gr: "Πότε είναι το ραντ...", en: "When is my appointm..." }), status: t({ gr: "Εκκρεμεί", en: "Pending" }), statusColor: "#F59E0B", channel: "WhatsApp", unread: true },
+    { name: "Elena D.", emoji: "👩‍🦰", preview: t({ gr: "Ναι, εντάξει!", en: "Yes, sounds good!" }), status: t({ gr: "Επιλυμένο", en: "Resolved" }), statusColor: "#16A34A", channel: "SMS", unread: false },
+    { name: "Nikos M.", emoji: "🧔", preview: t({ gr: "Μπορώ να αλλάξω...", en: "Can I reschedule..." }), status: t({ gr: "Ανοιχτό", en: "Open" }), statusColor: "#3B82F6", channel: "Email", unread: false },
+  ];
+
+  return (
+    <MockupShell className={className}>
+      <div className="flex min-h-[360px]">
+        <Sidebar />
+        <div className="flex-1 p-3">
+          <div className="mb-3 flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold text-[var(--color-navy)]">
+                {t({ gr: "Εισερχόμενα", en: "Inbox" })}
+              </p>
+              <p className="text-[10px] text-[var(--color-muted)]">
+                {t({ gr: "2 αδιάβαστα", en: "2 unread" })}
+              </p>
+            </div>
+            <div className="rounded-lg bg-[var(--color-blue)] px-2 py-1 text-[10px] font-semibold text-white">
+              + {t({ gr: "Νέο μήνυμα", en: "New message" })}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            {threads.map((thread) => (
+              <div
+                key={thread.name}
+                className={cn(
+                  "flex items-center gap-2.5 rounded-[14px] border px-3 py-2.5",
+                  thread.unread
+                    ? "border-[var(--color-blue)]/20 bg-[var(--color-blue)]/5"
+                    : "border-[var(--color-border)] bg-white",
+                )}
+              >
+                <span className="text-lg">{thread.emoji}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <p className={cn("truncate text-xs text-[var(--color-navy)]", thread.unread && "font-semibold")}>
+                      {thread.name}
+                    </p>
+                    {thread.unread && <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-blue)]" />}
+                  </div>
+                  <p className="truncate text-[10px] text-[var(--color-muted)]">{thread.preview}</p>
+                </div>
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  <span className="rounded-full px-1.5 py-0.5 text-[8px] font-semibold text-white" style={{ background: thread.statusColor }}>
+                    {thread.status}
+                  </span>
+                  <span className="text-[8px] text-[var(--color-muted)]">{thread.channel}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </MockupShell>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Reports / Analytics Mockup                                          */
+/* ------------------------------------------------------------------ */
+
+export function ReportsMockup({ className }: { className?: string }) {
+  const { t } = useLanguage();
+
+  const kpis = [
+    { label: t({ gr: "Σημερινά", en: "Today" }), value: "7", color: "#3B82F6", trend: "+2" },
+    { label: t({ gr: "Εκκρεμή", en: "Pending" }), value: "3", color: "#F59E0B", trend: "-1" },
+    { label: t({ gr: "Ολοκληρωμένα", en: "Done" }), value: "12", color: "#16A34A", trend: "+5" },
+    { label: t({ gr: "Έσοδα", en: "Revenue" }), value: "€840", color: "#2EC4B6", trend: "+12%" },
+  ];
+
+  const barData = [40, 65, 45, 80, 55, 70, 90];
+  const maxBar = Math.max(...barData);
+
+  return (
+    <MockupShell className={className}>
+      <div className="flex min-h-[360px]">
+        <Sidebar />
+        <div className="flex-1 p-3">
+          <div className="mb-3 flex items-center justify-between">
+            <p className="text-xs font-semibold text-[var(--color-navy)]">
+              {t({ gr: "Αναφορές", en: "Reports" })}
+            </p>
+            <div className="flex gap-1">
+              <div className="rounded-lg bg-[var(--color-blue)] px-2 py-1 text-[10px] font-semibold text-white">
+                {t({ gr: "Εβδομάδα", en: "Week" })}
+              </div>
+              <div className="rounded-lg bg-white px-2 py-1 text-[10px] text-[var(--color-muted)] border border-[var(--color-border)]">
+                {t({ gr: "Μήνας", en: "Month" })}
+              </div>
+            </div>
+          </div>
+
+          {/* KPI cards */}
+          <div className="grid grid-cols-4 gap-1.5 mb-3">
+            {kpis.map((kpi) => (
+              <div key={kpi.label} className="rounded-xl border border-[var(--color-border)] bg-white p-2">
+                <p className="text-[9px] text-[var(--color-muted)]">{kpi.label}</p>
+                <p className="text-sm font-bold" style={{ color: kpi.color }}>{kpi.value}</p>
+                <p className="text-[8px] text-[var(--color-success)]">{kpi.trend}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Revenue chart */}
+          <div className="rounded-xl border border-[var(--color-border)] bg-white p-2.5">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted)] mb-2">
+              {t({ gr: "Έσοδα εβδομάδας", en: "Weekly revenue" })}
+            </p>
+            <div className="flex items-end gap-1 h-16">
+              {barData.map((val, i) => (
+                <div key={i} className="flex-1 flex flex-col items-center gap-0.5">
+                  <div
+                    className="w-full rounded-t-sm bg-[var(--color-blue)]"
+                    style={{ height: `${(val / maxBar) * 100}%`, opacity: 0.7 + (val / maxBar) * 0.3 }}
+                  />
+                  <span className="text-[7px] text-[var(--color-muted)]">
+                    {["M", "T", "W", "T", "F", "S", "S"][i]}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Patient funnel */}
+          <div className="mt-2 rounded-xl border border-[var(--color-border)] bg-white p-2.5">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-muted)] mb-1.5">
+              {t({ gr: "Patient funnel", en: "Patient funnel" })}
+            </p>
+            <div className="space-y-1">
+              {[
+                { label: t({ gr: "Ενεργοί", en: "Active" }), pct: 85, color: "#16A34A" },
+                { label: t({ gr: "Κλεισμένοι", en: "Booked" }), pct: 60, color: "#3B82F6" },
+                { label: t({ gr: "Enquiry", en: "Enquiry" }), pct: 30, color: "#F59E0B" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-2">
+                  <span className="w-12 text-[9px] text-[var(--color-muted)]">{item.label}</span>
+                  <div className="flex-1 h-2 rounded-full bg-[var(--color-surface-soft)]">
+                    <div className="h-full rounded-full" style={{ width: `${item.pct}%`, background: item.color }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </MockupShell>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Letters Mockup                                                      */
+/* ------------------------------------------------------------------ */
+
+export function LettersMockup({ className }: { className?: string }) {
+  const { t } = useLanguage();
+
+  return (
+    <MockupShell className={className}>
+      <div className="flex min-h-[360px]">
+        <Sidebar />
+        <div className="flex-1 p-3">
+          <div className="mb-3 flex items-center justify-between">
+            <div>
+              <p className="text-xs font-semibold text-[var(--color-navy)]">
+                {t({ gr: "AI Επιστολή", en: "AI Letter" })}
+              </p>
+              <p className="text-[10px] text-[var(--color-muted)]">
+                👩 Maria P. — {t({ gr: "Παραπομπή", en: "Referral" })}
+              </p>
+            </div>
+            <div className="flex gap-1">
+              <div className="rounded-lg bg-[var(--color-blue)] px-2 py-1 text-[10px] font-semibold text-white">
+                {t({ gr: "Αποστολή", en: "Send" })}
+              </div>
+              <div className="rounded-lg bg-white px-2 py-1 text-[10px] text-[var(--color-muted)] border border-[var(--color-border)]">
+                PDF
+              </div>
+            </div>
+          </div>
+
+          {/* Tone selector */}
+          <div className="mb-3 flex gap-1.5">
+            {[
+              { key: "formal", label: t({ gr: "Επίσημο", en: "Formal" }), active: true },
+              { key: "clinical", label: t({ gr: "Κλινικό", en: "Clinical" }), active: false },
+              { key: "simple", label: t({ gr: "Απλό", en: "Simple" }), active: false },
+            ].map((tone) => (
+              <div
+                key={tone.key}
+                className={cn(
+                  "rounded-lg px-2 py-1 text-[10px] font-medium",
+                  tone.active
+                    ? "bg-[var(--color-navy)] text-white"
+                    : "border border-[var(--color-border)] bg-white text-[var(--color-muted)]",
+                )}
+              >
+                {tone.label}
+              </div>
+            ))}
+          </div>
+
+          {/* Letter preview */}
+          <div className="rounded-xl border border-[var(--color-border)] bg-white p-3 space-y-2">
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-[var(--color-teal)] animate-pulse" />
+              <span className="text-[10px] font-medium text-[var(--color-teal)]">
+                {t({ gr: "AI generated", en: "AI generated" })}
+              </span>
+            </div>
+            <p className="text-[11px] text-[var(--color-navy)] font-semibold">
+              {t({ gr: "Προς: Dr. Παπαδόπουλος", en: "To: Dr. Papadopoulos" })}
+            </p>
+            <p className="text-[10px] text-[var(--color-muted)] leading-relaxed">
+              {t({
+                gr: "Αγαπητέ συνάδελφε, σας παραπέμπω την ασθενή Maria P., 34 ετών, για περαιτέρω αξιολόγηση...",
+                en: "Dear colleague, I am referring patient Maria P., 34 years old, for further assessment...",
+              })}
+            </p>
+            <div className="border-t border-dashed border-[var(--color-border)] pt-2">
+              <p className="text-[10px] text-[var(--color-muted)] leading-relaxed">
+                {t({
+                  gr: "Η ασθενής παρουσίασε βελτίωση στο ROM αλλά συνεχίζει να αναφέρει δυσφορία...",
+                  en: "The patient showed improvement in ROM but continues to report discomfort...",
+                })}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </MockupShell>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Billing Mockup                                                      */
+/* ------------------------------------------------------------------ */
+
 export function BillingMockup({ className }: { className?: string }) {
   const { t } = useLanguage();
 

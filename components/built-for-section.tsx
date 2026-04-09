@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe, Shield, Euro, MessageSquare } from "lucide-react";
+import { Globe, Shield, Euro, MessageSquare, Brain, Lock, FileCheck, Wifi } from "lucide-react";
 import { useLanguage } from "./language-context";
 
 const highlights = [
@@ -9,35 +9,71 @@ const highlights = [
     color: "#3B82F6",
     title: { gr: "Δίγλωσσο (EL/EN)", en: "Bilingual (EL/EN)" },
     body: {
-      gr: "Πλήρης υποστήριξη ελληνικών και αγγλικών σε όλο το σύστημα.",
-      en: "Full Greek and English support throughout the entire system.",
+      gr: "Πλήρης υποστήριξη ελληνικών και αγγλικών σε όλο το σύστημα. Αλλαγή γλώσσας με ένα κλικ.",
+      en: "Full Greek and English support throughout. Switch language with one click.",
     },
   },
   {
     icon: Shield,
     color: "#16A34A",
-    title: { gr: "GDPR Compliant", en: "GDPR Compliant" },
+    title: { gr: "GDPR & Ασφάλεια", en: "GDPR & Security" },
     body: {
-      gr: "Σχεδιασμένο με GDPR-first σκέψη. Ασφαλής αποθήκευση δεδομένων ασθενών.",
-      en: "Designed with GDPR-first thinking. Secure patient data storage.",
+      gr: "GDPR-first σχεδίαση. MFA, audit logs, RLS, κρυπτογράφηση. Δεδομένα στη Φρανκφούρτη (ΕΕ).",
+      en: "GDPR-first design. MFA, audit logs, RLS, encryption. Data hosted in Frankfurt (EU).",
     },
   },
   {
     icon: Euro,
     color: "#F59E0B",
-    title: { gr: "Τοπικό νόμισμα (EUR)", en: "Local currency (EUR)" },
+    title: { gr: "EUR & ΓΕΣΥ / ΕΟΠΥΥ", en: "EUR & GESY / EOPYY" },
     body: {
-      gr: "Τιμολόγηση και χρεώσεις σε ευρώ. Κατάλληλο για Κύπρο και Ελλάδα.",
-      en: "Invoicing and billing in euros. Built for Cyprus and Greece.",
+      gr: "Τιμολόγηση σε ευρώ. Υποστήριξη ασφαλιστικών αξιώσεων ΓΕΣΥ (Κύπρος) και ΕΟΠΥΥ (Ελλάδα).",
+      en: "EUR invoicing. Insurance claim support for GESY (Cyprus) and EOPYY (Greece).",
     },
   },
   {
     icon: MessageSquare,
     color: "#2EC4B6",
-    title: { gr: "SMS / WhatsApp υπενθυμίσεις", en: "SMS / WhatsApp reminders" },
+    title: { gr: "SMS / WhatsApp / Email", en: "SMS / WhatsApp / Email" },
     body: {
-      gr: "Αυτόματες υπενθυμίσεις μέσω SMS και WhatsApp (Twilio). Μείωσε τα no-shows.",
-      en: "Automatic reminders via SMS and WhatsApp (Twilio). Reduce no-shows.",
+      gr: "Αυτόματες υπενθυμίσεις, μηνύματα και επιστολές — μέσω SMS, WhatsApp ή email.",
+      en: "Auto reminders, messages, and letters — via SMS, WhatsApp, or email.",
+    },
+  },
+  {
+    icon: Brain,
+    color: "#8B5CF6",
+    title: { gr: "AI-Powered", en: "AI-Powered" },
+    body: {
+      gr: "AI-υποβοηθούμενη σύνταξη σημειώσεων, επιστολών παραπομπής. Zero-retention — κανένα δεδομένο δεν αποθηκεύεται.",
+      en: "AI-assisted note drafting, referral letters. Zero-retention — no data stored by AI.",
+    },
+  },
+  {
+    icon: Lock,
+    color: "#F43F5E",
+    title: { gr: "Κλείδωμα σημειώσεων", en: "Note locking" },
+    body: {
+      gr: "Υπογράψτε και κλειδώστε κλινικές σημειώσεις. Addenda χωρίς αλλαγή πρωτοτύπου.",
+      en: "Sign and lock clinical notes. Addenda without changing the original.",
+    },
+  },
+  {
+    icon: FileCheck,
+    color: "#D97706",
+    title: { gr: "Custom templates", en: "Custom templates" },
+    body: {
+      gr: "Φτιάξτε δικά σας consultation templates ανά επάγγελμα. Πεδία κειμένου, αριθμοί, κλίμακες, body chart.",
+      en: "Build your own consultation templates per profession. Text fields, numbers, scales, body chart.",
+    },
+  },
+  {
+    icon: Wifi,
+    color: "#3B82F6",
+    title: { gr: "Cloud-based", en: "Cloud-based" },
+    body: {
+      gr: "Δουλεύει παντού — κινητό, tablet, υπολογιστή. Αυτόματη αποθήκευση, real-time sync.",
+      en: "Works everywhere — mobile, tablet, desktop. Auto-save, real-time sync.",
     },
   },
 ];
@@ -62,10 +98,10 @@ export function BuiltForSection() {
               en: "Built for Cyprus & Greece",
             })}
           </h2>
-          <p className="mt-3 text-base text-white/60 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/60 sm:text-lg">
             {t({
-              gr: "Τοπική αγορά, τοπικές ανάγκες, σωστά εργαλεία.",
-              en: "Local market, local needs, the right tools.",
+              gr: "Τοπική αγορά, τοπικές ανάγκες, σωστά εργαλεία. Δίγλωσσο σύστημα, τοπικό νόμισμα, ασφαλιστικές αξιώσεις, GDPR, AI.",
+              en: "Local market, local needs, the right tools. Bilingual system, local currency, insurance claims, GDPR, AI.",
             })}
           </p>
         </div>

@@ -1,10 +1,23 @@
 import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { resolveMarketingState, resolveProfessionBySlug, professions } from "@/lib/site-data";
+import { professionPages } from "@/lib/profession-data";
 import { ProfessionPageClient } from "./profession-client";
 
 export function generateStaticParams() {
   return professions.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const profession = resolveProfessionBySlug(slug);
+  if (!profession) return {};
+  const pageData = professionPages[profession];
+  const profLabel = professions.find((p) => p.key === profession)?.label.en ?? slug;
+  return {
+    title: `Clyro for ${profLabel}`,
+    description: pageData.heroDescription.en,
+  };
 }
 
 export default async function ProfessionPage({

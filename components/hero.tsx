@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check, Shield, Smartphone } from "lucide-react";
+import { ArrowRight, Check, Shield, Smartphone, Zap } from "lucide-react";
 import { useLanguage } from "./language-context";
 import { CalendarMockup } from "./app-mockups";
 
@@ -12,6 +12,7 @@ export function Hero() {
     { icon: <Check className="h-3.5 w-3.5" />, text: t({ gr: "Χωρίς κάρτα", en: "No card required" }) },
     { icon: <Shield className="h-3.5 w-3.5" />, text: t({ gr: "Συμβατό με GDPR", en: "GDPR compliant" }) },
     { icon: <Smartphone className="h-3.5 w-3.5" />, text: t({ gr: "Κάθε συσκευή", en: "Any device" }) },
+    { icon: <Zap className="h-3.5 w-3.5" />, text: t({ gr: "Εγγραφή σε 2'", en: "Setup in 2min" }) },
   ];
 
   return (
@@ -28,24 +29,24 @@ export function Hero() {
           {/* Eyebrow */}
           <div className="animate-fade-in inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(59,130,246,0.16)] bg-white/80 px-4 py-2 text-sm text-[var(--color-muted)] shadow-[0_12px_30px_-24px_rgba(17,24,39,0.34)]">
             <span className="rounded-full bg-[var(--color-blue)]/10 px-2.5 py-0.5 text-xs font-semibold text-[var(--color-blue-dark)]">
-              {t({ gr: "Νέο", en: "New" })}
+              {t({ gr: "Κύπρος & Ελλάδα", en: "Cyprus & Greece" })}
             </span>
-            <span>{t({ gr: "Απλό σύστημα για επαγγελματίες υγείας", en: "Simple software for health pros" })}</span>
+            <span>{t({ gr: "Λογισμικό διαχείρισης ιατρείου", en: "Practice management software" })}</span>
           </div>
 
           {/* Headline */}
           <h1 className="mt-6 max-w-xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[0.95] tracking-[-0.04em]">
             <span className="gradient-text">
               {t({
-                gr: "Οργάνωσε το πρόγραμμά σου.",
-                en: "Run your practice.",
+                gr: "Ολόκληρο το ιατρείο σας.",
+                en: "Your entire practice.",
               })}
             </span>
             <br />
             <span className="text-[var(--color-navy)]">
               {t({
-                gr: "Χωρίς άγχος.",
-                en: "Without friction.",
+                gr: "Σε ένα σύστημα.",
+                en: "One system.",
               })}
             </span>
           </h1>
@@ -53,8 +54,8 @@ export function Hero() {
           {/* Subtitle */}
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
             {t({
-              gr: "Ραντεβού, ασθενείς και σημειώσεις σε ένα απλό σύστημα για επαγγελματίες υγείας στην Κύπρο και την Ελλάδα.",
-              en: "Appointments, patient records, and clinical notes in one simple system for health professionals in Cyprus & Greece.",
+              gr: "Ημερολόγιο, ασθενείς, κλινικές σημειώσεις, τιμολόγηση, επικοινωνία, AI και αναφορές — σε μια πλατφόρμα σχεδιασμένη για επαγγελματίες υγείας.",
+              en: "Calendar, patients, clinical notes, billing, messaging, AI, and analytics — in one platform built for health professionals.",
             })}
           </p>
 

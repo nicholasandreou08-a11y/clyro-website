@@ -7,8 +7,20 @@ import { Logo } from "./logo";
 const footerLinks = {
   product: [
     { href: "/features", label: { gr: "Δυνατότητες", en: "Features" } },
+    { href: "/features/calendar", label: { gr: "Ημερολόγιο", en: "Calendar" } },
+    { href: "/features/patients", label: { gr: "Ασθενείς", en: "Patients" } },
+    { href: "/features/clinical-notes", label: { gr: "Σημειώσεις", en: "Notes" } },
+    { href: "/features/billing", label: { gr: "Τιμολόγηση", en: "Billing" } },
+    { href: "/features/reports", label: { gr: "Αναφορές", en: "Reports" } },
     { href: "/pricing", label: { gr: "Τιμολόγηση", en: "Pricing" } },
     { href: "/demo", label: { gr: "Demo", en: "Demo" } },
+  ],
+  professions: [
+    { href: "/physiotherapists", label: { gr: "Φυσιοθεραπευτές", en: "Physiotherapists" } },
+    { href: "/dieticians", label: { gr: "Διαιτολόγοι", en: "Dieticians" } },
+    { href: "/psychologists", label: { gr: "Ψυχολόγοι", en: "Psychologists" } },
+    { href: "/doctors", label: { gr: "Γιατροί", en: "Doctors" } },
+    { href: "/clinics", label: { gr: "Κλινικές", en: "Clinics" } },
   ],
   company: [
     { href: "/contact", label: { gr: "Επικοινωνία", en: "Contact" } },
@@ -23,14 +35,14 @@ export function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)] bg-white/60 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-5">
           {/* Brand column */}
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--color-muted)]">
               {t({
-                gr: "Απλό σύστημα για επαγγελματίες υγείας στην Κύπρο και την Ελλάδα. Ραντεβού, ασθενείς και σημειώσεις σε ένα μέρος.",
-                en: "Simple practice software for health professionals in Cyprus & Greece. Appointments, patients, and notes in one place.",
+                gr: "Πλήρες σύστημα διαχείρισης ιατρείου για επαγγελματίες υγείας στην Κύπρο και την Ελλάδα. Ημερολόγιο, ασθενείς, σημειώσεις, τιμολόγηση, επικοινωνία και αναφορές.",
+                en: "Complete practice management for health professionals in Cyprus & Greece. Calendar, patients, notes, billing, communication, and reports.",
               })}
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-soft)] px-4 py-2 text-xs font-medium text-[var(--color-muted)]">
@@ -46,6 +58,25 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-3">
               {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-navy)]"
+                  >
+                    {t(link.label)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Profession links */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">
+              {t({ gr: "Για", en: "For" })}
+            </p>
+            <ul className="mt-4 space-y-3">
+              {footerLinks.professions.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
