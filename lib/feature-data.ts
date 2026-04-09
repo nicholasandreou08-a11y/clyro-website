@@ -59,8 +59,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "The backbone of your practice",
     },
     description: {
-      gr: "Ημερήσια, εβδομαδιαία και μηνιαία προβολή με drag-and-drop, πολλαπλούς θεραπευτές σε παράλληλες στήλες, και χρωματική κωδικοποίηση ανά τύπο ραντεβού.",
-      en: "Day, week, and month views with drag-and-drop, multi-practitioner parallel columns, and color-coded appointment types.",
+      gr: "Drag-and-drop, πολλαπλοί θεραπευτές, χρωματικοί κώδικες.",
+      en: "Drag-and-drop, multi-practitioner, color-coded.",
     },
     heroDescription: {
       gr: "Ένα ημερολόγιο σχεδιασμένο γύρω από τον τρόπο που δουλεύουν πραγματικά οι κλινικές. Δείτε ολόκληρη την ομάδα σας σε μία ματιά, σύρετε ραντεβού, διαχειριστείτε αίθουσες — χωρίς μπερδέματα.",
@@ -91,7 +91,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: { gr: "Κατάσταση ραντεβού", en: "Appointment status" },
         description: {
-          gr: "Παρακολουθήστε κάθε ραντεβού: scheduled, arrived, in-session, completed, no-show, cancelled. Άμεση εικόνα ροής.",
+          gr: "Παρακολουθήστε κάθε ραντεβού: προγραμματισμένο, αφίχθη, σε εξέλιξη, ολοκληρωμένο, δεν εμφανίστηκε, ακυρωμένο. Άμεση εικόνα ροής.",
           en: "Track every appointment: scheduled, arrived, in-session, completed, no-show, cancelled. Instant flow overview.",
         },
       },
@@ -112,7 +112,7 @@ export const featureCategories: FeatureCategory[] = [
     ],
     highlights: [
       { gr: "Ημέρα / Εβδομάδα / Μήνας", en: "Day / Week / Month views" },
-      { gr: "Drag-and-drop", en: "Drag-and-drop" },
+      { gr: "Σύρε και άφησε", en: "Drag-and-drop" },
       { gr: "Παράλληλες στήλες θεραπευτών", en: "Side-by-side practitioner columns" },
       { gr: "Χρωματική κωδικοποίηση", en: "Color-coded types" },
       { gr: "Κατάσταση ραντεβού", en: "Appointment status tracking" },
@@ -129,8 +129,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "The complete patient picture",
     },
     description: {
-      gr: "Πλήρες προφίλ ασθενών με ιστορικό, στάδιο θεραπείας, σημειώσεις, ραντεβού, χρεώσεις και έγγραφα — όλα σε ένα μέρος.",
-      en: "Complete patient profiles with history, treatment stage, notes, appointments, billing, and documents — all in one place.",
+      gr: "Προφίλ, ιστορικό, στάδιο θεραπείας — σε ένα μέρος.",
+      en: "Profiles, history, treatment stage — in one place.",
     },
     heroDescription: {
       gr: "Από την πρώτη επαφή μέχρι το discharge. Ολόκληρο το ιστορικό του ασθενή — ραντεβού, σημειώσεις, χρεώσεις, αρχεία — σε ένα προφίλ.",
@@ -147,7 +147,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: { gr: "Στάδια θεραπείας", en: "Treatment stages" },
         description: {
-          gr: "Enquiry → Booked → Active → Discharged → Inactive. Παρακολουθήστε κάθε ασθενή στο funnel.",
+          gr: "Ενδιαφέρον → Κρατημένο → Ενεργός → Ολοκληρωμένος → Ανενεργός. Παρακολουθήστε κάθε ασθενή στη διαδρομή.",
           en: "Enquiry → Booked → Active → Discharged → Inactive. Track every patient through the funnel.",
         },
       },
@@ -184,7 +184,7 @@ export const featureCategories: FeatureCategory[] = [
       { gr: "Πλήρες προφίλ & ιστορικό", en: "Full profile & history" },
       { gr: "Στάδια θεραπείας (funnel)", en: "Treatment stages (funnel)" },
       { gr: "Αναζήτηση & φίλτρα", en: "Search & filters" },
-      { gr: "Emoji avatars", en: "Emoji avatars" },
+      { gr: "Εικονίδια Emoji", en: "Emoji avatars" },
       { gr: "Κηδεμόνες", en: "Guardian relationships" },
       { gr: "Φόρμα εισαγωγής", en: "Intake forms" },
     ],
@@ -199,8 +199,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "Structured documentation, zero wasted time",
     },
     description: {
-      gr: "SOAP σημειώσεις, body chart, bespoke templates ανά επάγγελμα, πίνακες μετρήσεων, addenda, και κλείδωμα σημειώσεων. AI-υποβοηθούμενη σύνταξη.",
-      en: "SOAP notes, body chart, bespoke templates per profession, measurement tables, addenda, and note locking. AI-assisted drafting.",
+      gr: "SOAP, body chart, custom templates, AI drafting.",
+      en: "SOAP, body chart, custom templates, AI drafting.",
     },
     heroDescription: {
       gr: "Σταματήστε να γράφετε σε χαρτί ή σε ανοργάνωτα αρχεία. Templates σχεδιασμένα για τον τρόπο που δουλεύετε, body chart για επισήμανση προβλημάτων, και AI που σας βοηθά να γράψετε πιο γρήγορα.",
@@ -215,14 +215,14 @@ export const featureCategories: FeatureCategory[] = [
         },
       },
       {
-        title: { gr: "Body chart", en: "Body chart" },
+        title: { gr: "Χάρτης σώματος", en: "Body chart" },
         description: {
           gr: "Διαδραστικός χάρτης σώματος. Κλικ στο σημείο του πόνου, προσθήκη σημείωσης.",
           en: "Interactive body manikin. Click the pain point, add a note.",
         },
       },
       {
-        title: { gr: "Bespoke templates", en: "Bespoke templates" },
+        title: { gr: "Προσαρμοσμένα πρότυπα", en: "Bespoke templates" },
         description: {
           gr: "Δημιουργήστε τα δικά σας templates με πεδία κειμένου, αριθμούς, κλίμακες, checkboxes, πίνακες μετρήσεων. Ανά επάγγελμα.",
           en: "Create your own templates with text fields, numbers, scales, checkboxes, measurement tables. Per profession.",
@@ -251,10 +251,10 @@ export const featureCategories: FeatureCategory[] = [
       },
     ],
     highlights: [
-      { gr: "SOAP format", en: "SOAP format" },
-      { gr: "Body chart με markers", en: "Body chart with markers" },
-      { gr: "Custom templates", en: "Custom templates" },
-      { gr: "AI drafting", en: "AI drafting" },
+      { gr: "Μορφή SOAP", en: "SOAP format" },
+      { gr: "Χάρτης σώματος με δείκτες", en: "Body chart with markers" },
+      { gr: "Προσαρμοσμένα πρότυπα", en: "Custom templates" },
+      { gr: "Σύνταξη με AI", en: "AI drafting" },
       { gr: "Κλείδωμα σημειώσεων", en: "Note locking" },
       { gr: "Πίνακες μετρήσεων", en: "Measurement tables" },
     ],
@@ -269,8 +269,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "Invoicing without headaches",
     },
     description: {
-      gr: "Πλήρης κύκλος τιμολόγησης: draft → unpaid → paid. Service lines με ΦΠΑ, PDF εξαγωγή, email αποστολή, και πολλαπλές πληρωμές ανά τιμολόγιο.",
-      en: "Full invoicing lifecycle: draft → unpaid → paid. Service lines with VAT, PDF export, email delivery, and multiple payments per invoice.",
+      gr: "Draft → Paid, ΦΠΑ, PDF, email αποστολή.",
+      en: "Draft → Paid, VAT, PDF, email delivery.",
     },
     heroDescription: {
       gr: "Δημιουργήστε τιμολόγια με ένα κλικ μετά τη συνεδρία. Γραμμές υπηρεσιών, ΦΠΑ, PDF — και στείλτε απευθείας στον ασθενή.",
@@ -324,8 +324,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "Stay in touch, reduce no-shows",
     },
     description: {
-      gr: "Inbox με threads ανά ασθενή, email, SMS και WhatsApp μέσω Twilio, αυτόματες υπενθυμίσεις ραντεβού, και AI-powered referral letters.",
-      en: "Inbox with per-patient threads, email, SMS and WhatsApp via Twilio, automatic appointment reminders, and AI-powered referral letters.",
+      gr: "Email, SMS, WhatsApp, αυτόματες υπενθυμίσεις.",
+      en: "Email, SMS, WhatsApp, auto reminders.",
     },
     heroDescription: {
       gr: "Στείλτε υπενθυμίσεις, μηνύματα και αναφορές απευθείας στους ασθενείς σας. Email, SMS, WhatsApp — ό,τι προτιμούν.",
@@ -333,7 +333,7 @@ export const featureCategories: FeatureCategory[] = [
     },
     capabilities: [
       {
-        title: { gr: "Inbox με threads", en: "Threaded inbox" },
+        title: { gr: "Εισερχόμενα με νήματα", en: "Threaded inbox" },
         description: {
           gr: "Κάθε ασθενής ένα thread. Ανοιχτά, σε εκκρεμότητα, επιλυμένα. Βλέπετε ολόκληρο το ιστορικό επικοινωνίας.",
           en: "One thread per patient. Open, pending, resolved. See the full communication history.",
@@ -356,16 +356,16 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: { gr: "AI επιστολές", en: "AI letters" },
         description: {
-          gr: "Δημιουργήστε referral letters, αναφορές ή κλινικά summaries με AI. Επιλέξτε τόνο, εξάγετε σε PDF.",
+          gr: "Δημιουργήστε επιστολές παραπομπής, αναφορές ή κλινικές συνόψεις με AI. Επιλέξτε τόνο, εξάγετε σε PDF.",
           en: "Generate referral letters, reports, or clinical summaries with AI. Choose tone, export to PDF.",
         },
       },
     ],
     highlights: [
-      { gr: "Threaded inbox", en: "Threaded inbox" },
+      { gr: "Εισερχόμενα με νήματα", en: "Threaded inbox" },
       { gr: "Email / SMS / WhatsApp", en: "Email / SMS / WhatsApp" },
       { gr: "Αυτόματες υπενθυμίσεις", en: "Auto reminders" },
-      { gr: "AI referral letters", en: "AI referral letters" },
+      { gr: "Επιστολές παραπομπής με AI", en: "AI referral letters" },
       { gr: "PDF εξαγωγή", en: "PDF export" },
     ],
   },
@@ -379,8 +379,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "Understand how your practice performs",
     },
     description: {
-      gr: "Dashboard με KPIs, γραφήματα εσόδων, ραντεβού, utilisation, patient funnel, donut charts ανά τύπο, και CSV εξαγωγή.",
-      en: "Dashboard with KPIs, revenue charts, appointments, utilisation, patient funnel, donut charts by type, and CSV export.",
+      gr: "KPIs, γραφήματα εσόδων, funnel, CSV export.",
+      en: "KPIs, revenue charts, funnel, CSV export.",
     },
     heroDescription: {
       gr: "Σταματήστε να μαντεύετε. Δείτε ακριβώς πόσα κερδίζετε, πόσα ραντεβού κλείνετε, και πού χάνετε χρόνο.",
@@ -388,7 +388,7 @@ export const featureCategories: FeatureCategory[] = [
     },
     capabilities: [
       {
-        title: { gr: "Dashboard KPIs", en: "Dashboard KPIs" },
+        title: { gr: "Πίνακας ελέγχου KPI", en: "Dashboard KPIs" },
         description: {
           gr: "Σημερινά ραντεβού, εκκρεμή, ολοκληρωμένα, έσοδα — σε μια ματιά.",
           en: "Today's appointments, pending, completed, revenue — at a glance.",
@@ -402,9 +402,9 @@ export const featureCategories: FeatureCategory[] = [
         },
       },
       {
-        title: { gr: "Patient funnel", en: "Patient funnel" },
+        title: { gr: "Διαδρομή ασθενών", en: "Patient funnel" },
         description: {
-          gr: "Πόσοι ασθενείς σε κάθε στάδιο: enquiry → booked → active → discharged.",
+          gr: "Πόσοι ασθενείς σε κάθε στάδιο: ενδιαφέρον → κρατημένο → ενεργός → ολοκληρωμένος.",
           en: "How many patients at each stage: enquiry → booked → active → discharged.",
         },
       },
@@ -417,11 +417,11 @@ export const featureCategories: FeatureCategory[] = [
       },
     ],
     highlights: [
-      { gr: "Dashboard KPIs", en: "Dashboard KPIs" },
+      { gr: "Πίνακας ελέγχου KPI", en: "Dashboard KPIs" },
       { gr: "Γράφημα εσόδων", en: "Revenue charts" },
-      { gr: "Patient funnel", en: "Patient funnel" },
-      { gr: "Utilisation", en: "Utilisation tracking" },
-      { gr: "CSV εξαγωγή", en: "CSV export" },
+      { gr: "Διαδρομή ασθενών", en: "Patient funnel" },
+      { gr: "Αξιοποίηση", en: "Utilisation tracking" },
+      { gr: "Εξαγωγή CSV", en: "CSV export" },
     ],
   },
   {
@@ -434,8 +434,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "From solo practice to multi-site clinic",
     },
     description: {
-      gr: "Πολλοί χρήστες με ρόλους (Owner, Admin, Physio, Reception), πολλαπλές κλινικές με κοινό ημερολόγιο, team invitations, και ξεχωριστό ωράριο ανά τοποθεσία.",
-      en: "Multiple users with roles (Owner, Admin, Physio, Reception), multi-clinic with shared calendar, team invitations, and separate hours per location.",
+      gr: "Ρόλοι, πολλαπλές κλινικές, κοινό ημερολόγιο.",
+      en: "Roles, multi-clinic, shared calendar.",
     },
     heroDescription: {
       gr: "Μεγαλώστε χωρίς να χάσετε τον έλεγχο. Προσθέστε θεραπευτές, ανοίξτε νέες τοποθεσίες, ορίστε ρόλους — χωρίς extra πολυπλοκότητα.",
@@ -450,9 +450,9 @@ export const featureCategories: FeatureCategory[] = [
         },
       },
       {
-        title: { gr: "Multi-clinic", en: "Multi-clinic" },
+        title: { gr: "Πολλαπλές κλινικές", en: "Multi-clinic" },
         description: {
-          gr: "Πολλαπλές τοποθεσίες, ένας λογαριασμός. Clinic switcher για γρήγορη αλλαγή.",
+          gr: "Πολλαπλές τοποθεσίες, ένας λογαριασμός. Εναλλαγή κλινικής για γρήγορη αλλαγή.",
           en: "Multiple locations, one account. Clinic switcher for quick changes.",
         },
       },
@@ -472,10 +472,10 @@ export const featureCategories: FeatureCategory[] = [
       },
     ],
     highlights: [
-      { gr: "Ρόλοι (Owner / Admin / Physio / Reception)", en: "Roles (Owner / Admin / Physio / Reception)" },
-      { gr: "Multi-clinic", en: "Multi-clinic" },
+      { gr: "Ρόλοι (Ιδιοκτήτης / Διαχειριστής / Θεραπευτής / Υποδοχή)", en: "Roles (Owner / Admin / Physio / Reception)" },
+      { gr: "Πολλαπλές κλινικές", en: "Multi-clinic" },
       { gr: "Κοινό ημερολόγιο", en: "Shared calendar" },
-      { gr: "Team invitations", en: "Team invitations" },
+      { gr: "Προσκλήσεις ομάδας", en: "Team invitations" },
     ],
   },
   {
@@ -488,8 +488,8 @@ export const featureCategories: FeatureCategory[] = [
       en: "GESY & EOPYY in one system",
     },
     description: {
-      gr: "Υποστήριξη ΓΕΣΥ (Κύπρος) και ΕΟΠΥΥ (Ελλάδα). Δημιουργήστε αξιώσεις, παρακολουθήστε κατάσταση, και κρατήστε ιστορικό παραπομπών.",
-      en: "Support for GESY (Cyprus) and EOPYY (Greece). Create claims, track status, and keep referral history.",
+      gr: "ΓΕΣΥ (Κύπρος) & ΕΟΠΥΥ (Ελλάδα). Claims & tracking.",
+      en: "GESY (Cyprus) & EOPYY (Greece). Claims & tracking.",
     },
     heroDescription: {
       gr: "Οργανώστε τις ασφαλιστικές αξιώσεις σας χωρίς χαρτούρα. Draft → Submitted → Approved → Paid. Ιστορικό παραπομπών και κωδικοί διάγνωσης.",
@@ -550,7 +550,7 @@ export const additionalFeatures: MiniFeature[] = [
     color: "#D97706",
     title: { gr: "Υπενθυμίσεις", en: "Reminders" },
     body: {
-      gr: "Αυτόματες SMS και WhatsApp υπενθυμίσεις μέσω Twilio. Μειώστε τα no-shows.",
+      gr: "Αυτόματες SMS και WhatsApp υπενθυμίσεις μέσω Twilio. Μειώστε τις ακυρώσεις.",
       en: "Automatic SMS and WhatsApp reminders via Twilio. Reduce no-shows.",
     },
   },
@@ -559,7 +559,7 @@ export const additionalFeatures: MiniFeature[] = [
     color: "#3B82F6",
     title: { gr: "AI Επιστολές", en: "AI Letters" },
     body: {
-      gr: "Δημιουργήστε referral letters, αναφορές και κλινικά summaries. Επιλέξτε τόνο, εξάγετε σε PDF.",
+      gr: "Δημιουργήστε επιστολές παραπομπής, αναφορές και κλινικές συνόψεις. Επιλέξτε τόνο, εξάγετε σε PDF.",
       en: "Generate referral letters, reports, and clinical summaries. Choose tone, export to PDF.",
     },
   },
@@ -575,9 +575,9 @@ export const additionalFeatures: MiniFeature[] = [
   {
     icon: Target,
     color: "#F43F5E",
-    title: { gr: "Care Goals", en: "Care Goals" },
+    title: { gr: "Στόχοι θεραπείας", en: "Care Goals" },
     body: {
-      gr: "Θέστε στόχους θεραπείας ανά ασθενή. Ημερομηνία-στόχος, παρακολούθηση, σύνδεση με episode.",
+      gr: "Θέστε στόχους θεραπείας ανά ασθενή. Ημερομηνία-στόχος, παρακολούθηση, σύνδεση με επεισόδιο.",
       en: "Set treatment goals per patient. Target dates, tracking, episode linking.",
     },
   },

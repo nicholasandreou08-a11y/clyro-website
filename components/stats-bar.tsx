@@ -4,24 +4,24 @@ import { useLanguage } from "./language-context";
 
 const stats = [
   {
-    value: "5",
-    label: { gr: "Επαγγέλματα", en: "Professions" },
-    description: { gr: "Φυσιοθεραπευτές, γιατροί, διαιτολόγοι, ψυχολόγοι, κλινικές", en: "Physios, doctors, dieticians, psychologists, clinics" },
-  },
-  {
-    value: "2",
-    label: { gr: "Γλώσσες", en: "Languages" },
-    description: { gr: "Πλήρης υποστήριξη Ελληνικών & Αγγλικών", en: "Full Greek & English support" },
-  },
-  {
-    value: "20+",
+    value: "8",
     label: { gr: "Modules", en: "Modules" },
-    description: { gr: "Ημερολόγιο, ασθενείς, σημειώσεις, τιμολόγηση, AI & πολλά ακόμη", en: "Calendar, patients, notes, billing, AI & many more" },
+    description: { gr: "Ημερολόγιο → Τιμολόγηση → AI", en: "Calendar → Billing → AI" },
   },
   {
-    value: "2min",
+    value: "🇬🇷 🇨🇾",
+    label: { gr: "Δίγλωσσο", en: "Bilingual" },
+    description: { gr: "Ελληνικά & Αγγλικά", en: "Greek & English" },
+  },
+  {
+    value: "GDPR",
+    label: { gr: "Συμβατό", en: "Compliant" },
+    description: { gr: "EU data, κρυπτογράφηση", en: "EU data, encrypted" },
+  },
+  {
+    value: "2′",
     label: { gr: "Εγγραφή", en: "Signup" },
-    description: { gr: "Χωρίς κάρτα, χωρίς δεσμεύσεις", en: "No card, no commitments" },
+    description: { gr: "Χωρίς κάρτα", en: "No card needed" },
   },
 ];
 

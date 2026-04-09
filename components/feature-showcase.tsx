@@ -23,8 +23,8 @@ export function FeatureShowcase() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base text-[var(--color-muted)]">
           {t({
-            gr: "Από ημερολόγιο και ασθενείς μέχρι AI σημειώσεις και ασφαλιστικές αξιώσεις. Ένα σύστημα, μηδέν βάρος.",
-            en: "From calendar and patients to AI notes and insurance claims. One system, zero overhead.",
+            gr: "Ένα σύστημα, μηδέν βάρος.",
+            en: "One system, zero overhead.",
           })}
         </p>
       </div>

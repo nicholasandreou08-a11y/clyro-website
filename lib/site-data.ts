@@ -70,7 +70,7 @@ export const professions: Array<{
       en: "Manage clients, reviews, and plans without friction.",
     },
     strapline: {
-      gr: "Συνεπές follow-up, γρήγορη καταγραφή, απλή εικόνα.",
+      gr: "Συνεπής παρακολούθηση, γρήγορη καταγραφή, απλή εικόνα.",
       en: "Consistent follow-up, fast note-taking, simpler oversight.",
     },
   },
@@ -330,7 +330,7 @@ export const trustPoints: Record<Language, ListItem[]> = {
       label: { gr: "Ασφαλής διαχείριση δεδομένων", en: "Secure data handling" },
     },
     {
-      label: { gr: "Έτοιμο για την ομάδα ή το solo practice", en: "Built for solo practices and teams" },
+      label: { gr: "Έτοιμο για ατομικό ιατρείο ή ομάδα", en: "Built for solo practices and teams" },
     },
   ],
   en: [
@@ -341,7 +341,7 @@ export const trustPoints: Record<Language, ListItem[]> = {
       label: { gr: "Ασφαλής διαχείριση δεδομένων", en: "Secure data handling" },
     },
     {
-      label: { gr: "Έτοιμο για την ομάδα ή το solo practice", en: "Built for solo practices and teams" },
+      label: { gr: "Έτοιμο για ατομικό ιατρείο ή ομάδα", en: "Built for solo practices and teams" },
     },
   ],
 };
@@ -351,14 +351,14 @@ export const productModules: Record<Language, ListItem[]> = {
     { label: { gr: "Ημερολόγιο", en: "Calendar" }, detail: { gr: "Ημέρα, εβδομάδα και γρήγορη κράτηση.", en: "Day, week, and quick booking." } },
     { label: { gr: "Προφίλ ασθενή", en: "Patient profile" }, detail: { gr: "Στοιχεία, ιστορικό και θεραπευτικά βήματα.", en: "Details, history, and care steps." } },
     { label: { gr: "Σημειώσεις", en: "Notes" }, detail: { gr: "Καθαρή καταγραφή κατά τη συνεδρία.", en: "Clean capture during the session." } },
-    { label: { gr: "Υπενθυμίσεις", en: "Reminders" }, detail: { gr: "SMS και email follow-up.", en: "SMS and email follow-up." } },
+    { label: { gr: "Υπενθυμίσεις", en: "Reminders" }, detail: { gr: "SMS και email παρακολούθηση.", en: "SMS and email follow-up." } },
     { label: { gr: "Χρεώσεις", en: "Billing" }, detail: { gr: "Ελάχιστη τριβή για πληρωμές και τιμολόγηση.", en: "Lightweight billing and payments." } },
   ],
   en: [
     { label: { gr: "Ημερολόγιο", en: "Calendar" }, detail: { gr: "Ημέρα, εβδομάδα και γρήγορη κράτηση.", en: "Day, week, and quick booking." } },
     { label: { gr: "Προφίλ ασθενή", en: "Patient profile" }, detail: { gr: "Στοιχεία, ιστορικό και θεραπευτικά βήματα.", en: "Details, history, and care steps." } },
     { label: { gr: "Σημειώσεις", en: "Notes" }, detail: { gr: "Καθαρή καταγραφή κατά τη συνεδρία.", en: "Clean capture during the session." } },
-    { label: { gr: "Υπενθυμίσεις", en: "Reminders" }, detail: { gr: "SMS και email follow-up.", en: "SMS and email follow-up." } },
+    { label: { gr: "Υπενθυμίσεις", en: "Reminders" }, detail: { gr: "SMS και email παρακολούθηση.", en: "SMS and email follow-up." } },
     { label: { gr: "Χρεώσεις", en: "Billing" }, detail: { gr: "Ελάχιστη τριβή για πληρωμές και τιμολόγηση.", en: "Lightweight billing and payments." } },
   ],
 };
@@ -375,7 +375,7 @@ export const pricingPlans: Record<
 > = {
   gr: [
     {
-      name: { gr: "Free", en: "Free" },
+      name: { gr: "Δωρεάν", en: "Free" },
       price: { gr: "0€", en: "€0" },
       description: {
         gr: "Βασικές λειτουργίες για να ξεκινήσεις.",
@@ -396,26 +396,26 @@ export const pricingPlans: Record<
       bullets: [
         { gr: "Υπενθυμίσεις", en: "Reminders" },
         { gr: "Σημειώσεις", en: "Notes" },
-        { gr: "Billing", en: "Billing" },
+        { gr: "Χρεώσεις", en: "Billing" },
       ],
       featured: true,
     },
     {
-      name: { gr: "Clinic", en: "Clinic" },
-      price: { gr: "Custom", en: "Custom" },
+      name: { gr: "Κλινική", en: "Clinic" },
+      price: { gr: "Κατόπιν συνεννόησης", en: "Custom" },
       description: {
         gr: "Για ομάδες με πολλούς χρήστες και κοινό πρόγραμμα.",
         en: "For teams with multiple users and shared scheduling.",
       },
       bullets: [
         { gr: "Πολλοί χρήστες", en: "Multiple users" },
-        { gr: "Shared calendar", en: "Shared calendar" },
+        { gr: "Κοινό ημερολόγιο", en: "Shared calendar" },
       ],
     },
   ],
   en: [
     {
-      name: { gr: "Free", en: "Free" },
+      name: { gr: "Δωρεάν", en: "Free" },
       price: { gr: "0€", en: "€0" },
       description: {
         gr: "Βασικές λειτουργίες για να ξεκινήσεις.",
@@ -436,20 +436,20 @@ export const pricingPlans: Record<
       bullets: [
         { gr: "Υπενθυμίσεις", en: "Reminders" },
         { gr: "Σημειώσεις", en: "Notes" },
-        { gr: "Billing", en: "Billing" },
+        { gr: "Χρεώσεις", en: "Billing" },
       ],
       featured: true,
     },
     {
-      name: { gr: "Clinic", en: "Clinic" },
-      price: { gr: "Custom", en: "Custom" },
+      name: { gr: "Κλινική", en: "Clinic" },
+      price: { gr: "Κατόπιν συνεννόησης", en: "Custom" },
       description: {
         gr: "Για ομάδες με πολλούς χρήστες και κοινό πρόγραμμα.",
         en: "For teams with multiple users and shared scheduling.",
       },
       bullets: [
         { gr: "Πολλοί χρήστες", en: "Multiple users" },
-        { gr: "Shared calendar", en: "Shared calendar" },
+        { gr: "Κοινό ημερολόγιο", en: "Shared calendar" },
       ],
     },
   ],
@@ -466,11 +466,11 @@ export const faqItems: Record<
     },
     {
       question: "Μπορώ να το χρησιμοποιήσω από κινητό;",
-      answer: "Ναι. Η εμπειρία είναι responsive σε κινητό, tablet και desktop.",
+      answer: "Ναι. Η εμπειρία προσαρμόζεται σε κινητό, tablet και υπολογιστή.",
     },
     {
       question: "Είναι ασφαλές;",
-      answer: "Ναι, με σύγχρονες πρακτικές ασφάλειας και GDPR-first σκέψη.",
+      answer: "Ναι, με σύγχρονες πρακτικές ασφάλειας και προσέγγιση με προτεραιότητα στον GDPR.",
     },
   ],
   en: [
@@ -494,10 +494,10 @@ export const integrations: Record<
   Array<{ name: string; description: string }>
 > = {
   gr: [
-    { name: "Payments", description: "Πληρωμές και τιμολόγηση" },
-    { name: "Messaging", description: "SMS και email υπενθυμίσεις" },
-    { name: "Calendar", description: "Συγχρονισμός ροών ημερολογίου" },
-    { name: "Exports", description: "Εξαγωγές δεδομένων" },
+    { name: "Πληρωμές", description: "Πληρωμές και τιμολόγηση" },
+    { name: "Μηνύματα", description: "SMS και email υπενθυμίσεις" },
+    { name: "Ημερολόγιο", description: "Συγχρονισμός ροών ημερολογίου" },
+    { name: "Εξαγωγές", description: "Εξαγωγές δεδομένων" },
   ],
   en: [
     { name: "Payments", description: "Payments and invoicing" },
@@ -508,7 +508,7 @@ export const integrations: Record<
 };
 
 export const blogCategories: Record<Language, string[]> = {
-  gr: ["Practice management", "Profession-specific", "Growth"],
+  gr: ["Διαχείριση ιατρείου", "Ανά επάγγελμα", "Ανάπτυξη"],
   en: ["Practice management", "Profession-specific", "Growth"],
 };
 
@@ -535,7 +535,7 @@ export const signupFields: Record<
 export const contactCopy: Record<Language, { title: string; subtitle: string; cta: string }> = {
   gr: {
     title: "Μίλα με την ομάδα",
-    subtitle: "Θέλεις να δεις το Clyro για το δικό σου ιατρείο ή κλινική; Κλείσε σύντομο intro.",
+    subtitle: "Θέλεις να δεις το Clyro για το δικό σου ιατρείο ή κλινική; Κλείσε μια σύντομη γνωριμία.",
     cta: "Κλείσε demo",
   },
   en: {
