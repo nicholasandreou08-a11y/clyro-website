@@ -5,7 +5,7 @@ import { useLanguage } from "./language-context";
 const testimonials = [
   {
     name: "Dr. Christos K.",
-    role: { gr: "Φυσιοθεραπευτής, Λεμεσός", en: "Physiotherapist, Limassol" },
+    role: { gr: "Φυσιοθεραπευτής, Θεσσαλονίκη", en: "Physiotherapist, Thessaloniki" },
     quote: {
       gr: "Το body chart και οι SOAP σημειώσεις μου εξοικονομούν 20 λεπτά τη μέρα. Επιτέλους σύστημα που καταλαβαίνει πώς δουλεύω.",
       en: "The body chart and SOAP notes save me 20 minutes a day. Finally a system that understands how I work.",
@@ -16,7 +16,7 @@ const testimonials = [
     name: "Maria T.",
     role: { gr: "Διαιτολόγος, Λευκωσία", en: "Dietician, Nicosia" },
     quote: {
-      gr: "Χρησιμοποιούσα Excel για τα ραντεβού μου. Τώρα έχω ιστορικό κάθε πελάτη, μετρήσεις, follow-ups — σε ένα κλικ.",
+      gr: "Χρησιμοποιούσα Excel για τα ραντεβού μου. Τώρα έχω ιστορικό κάθε πελάτη, μετρήσεις, επαναληπτικές επισκέψεις — σε ένα κλικ.",
       en: "I used Excel for my appointments. Now I have every client's history, measurements, follow-ups — in one click.",
     },
     emoji: "👩‍💼",
@@ -34,7 +34,7 @@ const testimonials = [
     name: "Dr. Elena D.",
     role: { gr: "Παθολόγος, Αθήνα", en: "Internist, Athens" },
     quote: {
-      gr: "Τα AI referral letters μου γλιτώνουν χρόνο κάθε μέρα. Η τιμολόγηση δεν ήταν ποτέ πιο εύκολη.",
+      gr: "Οι AI επιστολές παραπομπής μου γλιτώνουν χρόνο κάθε μέρα. Η τιμολόγηση δεν ήταν ποτέ πιο εύκολη.",
       en: "AI referral letters save me time every day. Invoicing has never been easier.",
     },
     emoji: "👩‍⚕️",
@@ -52,7 +52,7 @@ const testimonials = [
     name: "Georgia M.",
     role: { gr: "Φυσιοθεραπεύτρια, Λευκωσία", en: "Physiotherapist, Nicosia" },
     quote: {
-      gr: "Οι αυτόματες υπενθυμίσεις μείωσαν τα no-shows κατά 50%. Τα ΓΕΣΥ claims γίνονται σε δευτερόλεπτα.",
+      gr: "Οι αυτόματες υπενθυμίσεις μείωσαν τις απουσίες κατά 50%. Οι αξιώσεις ΓΕΣΥ γίνονται σε δευτερόλεπτα.",
       en: "Auto reminders cut no-shows by 50%. GESY claims happen in seconds.",
     },
     emoji: "👩‍⚕️",

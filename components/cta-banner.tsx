@@ -39,7 +39,7 @@ export function CtaBanner() {
               href="/demo"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:border-white/40 hover:bg-white/10"
             >
-              {t({ gr: "Δες demo", en: "See demo" })}
+              {t({ gr: "Δες επίδειξη", en: "See demo" })}
             </Link>
           </div>
         </div>

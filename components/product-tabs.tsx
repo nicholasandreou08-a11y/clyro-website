@@ -20,10 +20,10 @@ const tabs = [
   { key: "patients", label: { gr: "Ασθενείς", en: "Patients" }, emoji: "👥" },
   { key: "notes", label: { gr: "Σημειώσεις", en: "Notes" }, emoji: "📝" },
   { key: "billing", label: { gr: "Χρεώσεις", en: "Billing" }, emoji: "💶" },
-  { key: "inbox", label: { gr: "Inbox", en: "Inbox" }, emoji: "💬" },
+  { key: "inbox", label: { gr: "Εισερχόμενα", en: "Inbox" }, emoji: "💬" },
   { key: "reports", label: { gr: "Αναφορές", en: "Reports" }, emoji: "📊" },
   { key: "tasks", label: { gr: "Εργασίες", en: "Tasks" }, emoji: "✅" },
-  { key: "letters", label: { gr: "AI Letters", en: "AI Letters" }, emoji: "✉️" },
+  { key: "letters", label: { gr: "AI Επιστολές", en: "AI Letters" }, emoji: "✉️" },
 ] as const;
 
 type TabKey = (typeof tabs)[number]["key"];

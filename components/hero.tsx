@@ -5,6 +5,71 @@ import { ArrowRight, Check, Shield, Smartphone, Zap } from "lucide-react";
 import { useLanguage } from "./language-context";
 import { CalendarMockup } from "./app-mockups";
 import { ScreenshotMockup } from "./screenshot-mockup";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+
+/* ------------------------------------------------------------------ */
+/* Rotating‑word component for the headline                            */
+/* ------------------------------------------------------------------ */
+
+const rotatingWords = {
+  gr: [
+    { prefix: "Ολόκληρο το", word: "ιατρείο", suffix: "σας." },
+    { prefix: "Ολόκληρη η", word: "κλινική", suffix: "σας." },
+    { prefix: "Ολόκληρο το", word: "κέντρο", suffix: "σας." },
+    { prefix: "Ολόκληρο το", word: "φυσιοθεραπευτήριο", suffix: "σας." },
+  ],
+  en: [
+    { prefix: "Your entire", word: "practice", suffix: "." },
+    { prefix: "Your entire", word: "clinic", suffix: "." },
+    { prefix: "Your entire", word: "centre", suffix: "." },
+    { prefix: "Your entire", word: "studio", suffix: "." },
+  ],
+};
+
+const WORD_DURATION = 2800;
+
+function RotatingHeadline() {
+  const { language } = useLanguage();
+  const words = rotatingWords[language];
+  const [idx, setIdx] = useState(0);
+  const [phase, setPhase] = useState<"in" | "out">("in");
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPhase("out");
+      setTimeout(() => {
+        setIdx((i) => (i + 1) % words.length);
+        setPhase("in");
+      }, 350);
+    }, WORD_DURATION);
+    return () => clearInterval(timer);
+  }, [words.length]);
+
+  const current = words[idx];
+
+  return (
+    <>
+      {current.prefix}{" "}
+      <span
+        key={idx}
+        className={cn(
+          "inline-block",
+          phase === "in"
+            ? "animate-[word-rotate-in_0.4s_ease-out_both]"
+            : "animate-[word-rotate-out_0.3s_ease-in_both]",
+        )}
+      >
+        {current.word}
+      </span>{" "}
+      {current.suffix}
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                                */
+/* ------------------------------------------------------------------ */
 
 export function Hero() {
   const { t } = useLanguage();
@@ -30,7 +95,7 @@ export function Hero() {
           {/* Eyebrow */}
           <div className="animate-fade-in inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(59,130,246,0.16)] bg-white/80 px-4 py-2 text-sm text-[var(--color-muted)] shadow-[0_12px_30px_-24px_rgba(17,24,39,0.34)]">
             <span className="rounded-full bg-[var(--color-blue)]/10 px-2.5 py-0.5 text-xs font-semibold text-[var(--color-blue-dark)]">
-              {t({ gr: "Κύπρος & Ελλάδα", en: "Cyprus & Greece" })}
+              {t({ gr: "Ελλάδα & Κύπρος", en: "Greece & Cyprus" })}
             </span>
             <span>{t({ gr: "Λογισμικό διαχείρισης ιατρείου", en: "Practice management software" })}</span>
           </div>
@@ -38,10 +103,7 @@ export function Hero() {
           {/* Headline */}
           <h1 className="mt-6 max-w-xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[0.95] tracking-[-0.04em]">
             <span className="gradient-text">
-              {t({
-                gr: "Ολόκληρο το ιατρείο σας.",
-                en: "Your entire practice.",
-              })}
+              <RotatingHeadline />
             </span>
             <br />
             <span className="text-[var(--color-navy)]">

@@ -68,7 +68,7 @@ function EnglishPrivacy() {
         <Section id="who-we-are" title="1. Who we are">
           <p>
             Clyro is a cloud-based practice-management platform operated by Clyro
-            (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), registered in Limassol, Cyprus. For the purposes of
+            (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), registered in the European Union. For the purposes of
             the General Data Protection Regulation (EU) 2016/679 (&ldquo;GDPR&rdquo;), the
             Cyprus Processing of Personal Data (Protection of the Individual) Law
             125(I)/2018, and the Greek Law 4624/2019:
@@ -343,7 +343,7 @@ function EnglishPrivacy() {
           </p>
           <ul className="list-none space-y-1 pl-0">
             <li><strong>Email:</strong> <a href="mailto:hello@clyroapp.com" className="underline text-[var(--color-blue-dark)]">hello@clyroapp.com</a></li>
-            <li><strong>Address:</strong> Clyro, Limassol, Cyprus</li>
+            <li><strong>Email:</strong> hello@clyroapp.com</li>
           </ul>
         </Section>
       </div>
@@ -373,8 +373,8 @@ function GreekPrivacy() {
         <Section id="who-we-are" title="1. Ποιοι είμαστε">
           <p>
             Το Clyro είναι μια cloud πλατφόρμα διαχείρισης ιατρείων που λειτουργεί από
-            την Clyro (&laquo;εμείς&raquo;, &laquo;μας&raquo;), εγγεγραμμένη στη
-            Λεμεσό, Κύπρος. Για τους σκοπούς του Γενικού Κανονισμού Προστασίας
+            την Clyro (&laquo;εμείς&raquo;, &laquo;μας&raquo;), εγγεγραμμένη στην
+            Ευρωπαϊκή Ένωση. Για τους σκοπούς του Γενικού Κανονισμού Προστασίας
             Δεδομένων (ΕΕ) 2016/679 (&laquo;GDPR&raquo;), του Κυπριακού Νόμου
             125(I)/2018 περί Επεξεργασίας Δεδομένων Προσωπικού Χαρακτήρα, και του
             Ελληνικού Νόμου 4624/2019:
@@ -649,7 +649,7 @@ function GreekPrivacy() {
           </p>
           <ul className="list-none space-y-1 pl-0">
             <li><strong>Email:</strong> <a href="mailto:hello@clyroapp.com" className="underline text-[var(--color-blue-dark)]">hello@clyroapp.com</a></li>
-            <li><strong>Διεύθυνση:</strong> Clyro, Λεμεσός, Κύπρος</li>
+            <li><strong>Email:</strong> hello@clyroapp.com</li>
           </ul>
         </Section>
       </div>

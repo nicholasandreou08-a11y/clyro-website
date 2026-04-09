@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Bell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PageShell } from "@/components/page-shell";
-import { CtaBanner } from "@/components/cta-banner";
 import { useLanguage } from "@/components/language-context";
 import type { Language } from "@/lib/site-data";
 
@@ -23,7 +22,7 @@ const plans = [
         "Μέχρι 20 ασθενείς",
         "Βασικές σημειώσεις",
         "1 χρήστης",
-        "Email υποστήριξη",
+        "Υποστήριξη μέσω email",
       ],
       en: [
         "Appointment calendar",
@@ -48,12 +47,12 @@ const plans = [
       gr: [
         "Απεριόριστοι ασθενείς",
         "Κλινικές σημειώσεις SOAP",
-        "SMS & WhatsApp υπενθυμίσεις",
+        "Υπενθυμίσεις SMS & WhatsApp",
         "Χρεώσεις & τιμολόγηση",
-        "Body chart",
-        "Εργασίες & reminders",
+        "Χάρτης σώματος",
+        "Εργασίες & υπενθυμίσεις",
         "3 χρήστες",
-        "Priority υποστήριξη",
+        "Υποστήριξη προτεραιότητας",
       ],
       en: [
         "Unlimited patients",
@@ -84,9 +83,9 @@ const plans = [
         "Πολλαπλές κλινικές",
         "Κοινό ημερολόγιο",
         "Ρόλοι πρόσβασης",
-        "Audit trail",
-        "Dedicated onboarding",
-        "SLA υποστήριξη",
+        "Ιστορικό ενεργειών",
+        "Προσωπική εκπαίδευση",
+        "Υποστήριξη με SLA",
       ],
       en: [
         "Everything in Pro",
@@ -136,8 +135,26 @@ function PricingContent() {
         </p>
       </section>
 
+      {/* Coming Soon banner */}
+      <section className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3 rounded-2xl border border-[var(--color-amber)]/30 bg-[var(--color-amber)]/5 px-6 py-4">
+          <Bell className="h-5 w-5 shrink-0 text-[var(--color-amber)]" />
+          <div>
+            <p className="text-sm font-semibold text-[var(--color-navy)]">
+              {t({ gr: "Σύντομα κοντά σας", en: "Coming soon" })}
+            </p>
+            <p className="mt-0.5 text-sm text-[var(--color-muted)]">
+              {t({
+                gr: "Οριστικοποιούμε τα πλάνα μας. Ξεκίνα δωρεάν τώρα και θα ενημερωθείς πρώτος.",
+                en: "We're finalising our plans. Start free now and you'll be the first to know.",
+              })}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Plans */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-3 stagger-children">
           {plans.map((plan) => (
             <div

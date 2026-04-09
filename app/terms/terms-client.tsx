@@ -57,8 +57,8 @@ function EnglishTerms() {
         <Section id="acceptance" title="1. Acceptance of terms">
           <p>
             These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding
-            agreement between you (&ldquo;Customer&rdquo;, &ldquo;you&rdquo;) and Clyro,
-            Limassol, Cyprus (&ldquo;Clyro&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;)
+            agreement between you (&ldquo;Customer&rdquo;, &ldquo;you&rdquo;) and
+            Clyro (&ldquo;Clyro&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;)
             governing your access to and use of the Clyro practice-management platform
             available at my.clyroapp.com (the &ldquo;Service&rdquo;).
           </p>
@@ -86,7 +86,7 @@ function EnglishTerms() {
         <Section id="eligibility" title="3. Eligibility">
           <p>
             The Service is designed for licensed healthcare professionals and clinics
-            operating in Cyprus and Greece. By registering, you represent that you are
+            operating in Greece and Cyprus. By registering, you represent that you are
             at least 18 years old and have the legal authority to bind the Organisation
             to these Terms. You are responsible for ensuring that your use of the Service
             complies with all applicable healthcare regulations in your jurisdiction.
@@ -306,7 +306,7 @@ function EnglishTerms() {
             Any dispute arising out of or in connection with these Terms shall first be
             attempted to be resolved through good-faith negotiation. If unresolved within
             30 days, the dispute shall be submitted to the exclusive jurisdiction of the
-            courts of Limassol, Cyprus.
+            the competent courts of the European Union.
           </p>
           <p>
             For customers based in Greece, nothing in these Terms affects your
@@ -341,7 +341,7 @@ function EnglishTerms() {
           </p>
           <ul className="list-none space-y-1 pl-0">
             <li><strong>Email:</strong> <a href="mailto:hello@clyroapp.com" className="underline text-[var(--color-blue-dark)]">hello@clyroapp.com</a></li>
-            <li><strong>Address:</strong> Clyro, Limassol, Cyprus</li>
+            <li><strong>Email:</strong> hello@clyroapp.com</li>
           </ul>
         </Section>
       </div>
@@ -372,7 +372,7 @@ function GreekTerms() {
           <p>
             Αυτοί οι Όροι Χρήσης (&laquo;Όροι&raquo;) αποτελούν νομικά δεσμευτική
             συμφωνία μεταξύ εσάς (&laquo;Πελάτης&raquo;, &laquo;εσείς&raquo;) και της
-            Clyro, Λεμεσός, Κύπρος (&laquo;Clyro&raquo;, &laquo;εμείς&raquo;,
+            Clyro (&laquo;Clyro&raquo;, &laquo;εμείς&raquo;,
             &laquo;μας&raquo;) που διέπει την πρόσβαση και χρήση της πλατφόρμας
             διαχείρισης ιατρείων Clyro στο my.clyroapp.com (η &laquo;Υπηρεσία&raquo;).
           </p>
@@ -400,7 +400,7 @@ function GreekTerms() {
         <Section id="eligibility" title="3. Επιλεξιμότητα">
           <p>
             Η Υπηρεσία σχεδιάστηκε για αδειοδοτημένους επαγγελματίες υγείας και
-            κλινικές στην Κύπρο και την Ελλάδα. Εγγραφόμενοι, δηλώνετε ότι είστε
+            κλινικές στην Ελλάδα και την Κύπρο. Εγγραφόμενοι, δηλώνετε ότι είστε
             τουλάχιστον 18 ετών και έχετε τη νομική εξουσία να δεσμεύσετε τον Οργανισμό
             με αυτούς τους Όρους. Είστε υπεύθυνοι να διασφαλίσετε ότι η χρήση της
             Υπηρεσίας συμμορφώνεται με την ισχύουσα νομοθεσία υγείας.
@@ -600,7 +600,7 @@ function GreekTerms() {
           <p>
             Κάθε διαφορά θα επιχειρηθεί πρώτα να επιλυθεί μέσω καλόπιστης
             διαπραγμάτευσης. Εάν δεν επιλυθεί εντός 30 ημερών, υπάγεται στην
-            αποκλειστική δικαιοδοσία των δικαστηρίων Λεμεσού, Κύπρος.
+            αποκλειστική δικαιοδοσία των αρμοδίων δικαστηρίων της Ευρωπαϊκής Ένωσης.
           </p>
           <p>
             Για πελάτες στην Ελλάδα, κανένας όρος δεν επηρεάζει τα υποχρεωτικά
@@ -633,7 +633,7 @@ function GreekTerms() {
           </p>
           <ul className="list-none space-y-1 pl-0">
             <li><strong>Email:</strong> <a href="mailto:hello@clyroapp.com" className="underline text-[var(--color-blue-dark)]">hello@clyroapp.com</a></li>
-            <li><strong>Διεύθυνση:</strong> Clyro, Λεμεσός, Κύπρος</li>
+            <li><strong>Email:</strong> hello@clyroapp.com</li>
           </ul>
         </Section>
       </div>

@@ -18,7 +18,7 @@ const contactMethods = [
     icon: MapPin,
     color: "#2EC4B6",
     title: { gr: "Τοποθεσία", en: "Location" },
-    body: { gr: "Λεμεσός, Κύπρος", en: "Limassol, Cyprus" },
+    body: { gr: "Ελλάδα & Κύπρος", en: "Greece & Cyprus" },
     href: null,
   },
   {
@@ -59,7 +59,7 @@ function ContactContent() {
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-[var(--color-muted)] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
           {t({
-            gr: "Θέλεις να δεις το Clyro για το δικό σου ιατρείο ή κλινική; Κλείσε σύντομο demo ή στείλε μας μήνυμα.",
+            gr: "Θέλεις να δεις το Clyro για το δικό σου ιατρείο ή κλινική; Κλείσε σύντομη επίδειξη ή στείλε μας μήνυμα.",
             en: "Want to see Clyro for your practice or clinic? Book a short demo or send us a message.",
           })}
         </p>
@@ -98,11 +98,12 @@ function ContactContent() {
       {/* Contact form */}
       <ContactForm />
 
-      {/* Made in Cyprus badge */}
+      {/* Country badge */}
       <div className="py-12 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-soft)] px-5 py-2.5 text-sm text-[var(--color-muted)]">
+          <span className="text-lg">🇬🇷</span>
           <span className="text-lg">🇨🇾</span>
-          {t({ gr: "Φτιαγμένο στην Κύπρο", en: "Made in Cyprus" })}
+          {t({ gr: "Ελλάδα & Κύπρος", en: "Greece & Cyprus" })}
         </div>
       </div>
     </>

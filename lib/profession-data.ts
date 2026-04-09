@@ -176,7 +176,7 @@ export const professionPages: Record<Profession, ProfessionPageData> = {
     testimonials: [
       {
         name: "Dr. Christos K.",
-        role: { gr: "Φυσιοθεραπευτής, Λεμεσός", en: "Physiotherapist, Limassol" },
+        role: { gr: "Φυσιοθεραπευτής, Θεσσαλονίκη", en: "Physiotherapist, Thessaloniki" },
         quote: {
           gr: "Το body chart και οι SOAP σημειώσεις μου εξοικονομούν 20 λεπτά τη μέρα. Επιτέλους σύστημα που καταλαβαίνει πώς δουλεύω.",
           en: "The body chart and SOAP notes save me 20 minutes a day. Finally a system that understands how I work.",

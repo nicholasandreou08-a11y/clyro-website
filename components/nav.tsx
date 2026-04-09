@@ -12,7 +12,7 @@ import { Logo } from "./logo";
 const navLinks = [
   { href: "/features", label: { gr: "Δυνατότητες", en: "Features" } },
   { href: "/pricing", label: { gr: "Τιμολόγηση", en: "Pricing" } },
-  { href: "/demo", label: { gr: "Demo", en: "Demo" } },
+  { href: "/demo", label: { gr: "Επίδειξη", en: "Demo" } },
   { href: "/contact", label: { gr: "Επικοινωνία", en: "Contact" } },
 ];
 

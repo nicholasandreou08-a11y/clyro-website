@@ -15,15 +15,27 @@ import {
   InboxMockup,
   ReportsMockup,
 } from "@/components/app-mockups";
+import { ScreenshotMockup } from "@/components/screenshot-mockup";
 import type { Language } from "@/lib/site-data";
 
-const mockupMap: Record<string, React.FC<{ className?: string }>> = {
+/** CSS fallback mockups keyed by feature slug */
+const fallbackMap: Record<string, React.FC<{ className?: string }>> = {
   calendar: CalendarMockup,
   patients: PatientsMockup,
   "clinical-notes": NotesMockup,
   billing: BillingMockup,
   communication: InboxMockup,
   reports: ReportsMockup,
+};
+
+/** Map feature slugs to screenshot module keys */
+const screenshotKeyMap: Record<string, string> = {
+  calendar: "calendar",
+  patients: "patients",
+  "clinical-notes": "notes",
+  billing: "billing",
+  communication: "inbox",
+  reports: "reports",
 };
 
 export function FeaturesPageClient({ language }: { language: Language }) {
@@ -81,7 +93,8 @@ function FeaturesContent() {
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-24 py-16">
           {featureCategories.map((feat, idx) => {
-            const MockupComp = mockupMap[feat.slug];
+            const screenshotKey = screenshotKeyMap[feat.slug];
+            const FallbackComp = fallbackMap[feat.slug];
             return (
               <div key={feat.slug} id={feat.slug} className="scroll-mt-24">
                 <FeatureSection
@@ -92,7 +105,13 @@ function FeaturesContent() {
                   highlights={feat.highlights}
                   href={`/features/${feat.slug}`}
                   reverse={idx % 2 === 1}
-                  mockup={MockupComp ? <MockupComp /> : undefined}
+                  mockup={
+                    screenshotKey && FallbackComp ? (
+                      <ScreenshotMockup moduleKey={screenshotKey} fallback={FallbackComp} />
+                    ) : FallbackComp ? (
+                      <FallbackComp />
+                    ) : undefined
+                  }
                 />
               </div>
             );

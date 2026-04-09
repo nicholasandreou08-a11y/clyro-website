@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     template: "%s | Clyro",
   },
   description:
-    "Appointments, patient records, and clinical notes in one simple system. Designed for physiotherapists, dieticians, psychologists and clinics in Cyprus & Greece.",
+    "Appointments, patient records, and clinical notes in one simple system. Designed for physiotherapists, dieticians, psychologists and clinics in Greece & Cyprus.",
   metadataBase: new URL("https://clyroapp.com"),
   openGraph: {
     title: "Clyro — Simple practice software for health professionals",
     description:
-      "Appointments, patient records, and clinical notes in one simple system. Built for Cyprus & Greece.",
+      "Appointments, patient records, and clinical notes in one simple system. Built for Greece & Cyprus.",
     url: "https://clyroapp.com",
     siteName: "Clyro",
     locale: "el_GR",

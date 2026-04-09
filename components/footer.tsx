@@ -13,7 +13,7 @@ const footerLinks = {
     { href: "/features/billing", label: { gr: "Τιμολόγηση", en: "Billing" } },
     { href: "/features/reports", label: { gr: "Αναφορές", en: "Reports" } },
     { href: "/pricing", label: { gr: "Τιμολόγηση", en: "Pricing" } },
-    { href: "/demo", label: { gr: "Demo", en: "Demo" } },
+    { href: "/demo", label: { gr: "Επίδειξη", en: "Demo" } },
   ],
   professions: [
     { href: "/physiotherapists", label: { gr: "Φυσιοθεραπευτές", en: "Physiotherapists" } },
@@ -41,13 +41,14 @@ export function Footer() {
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--color-muted)]">
               {t({
-                gr: "Πλήρες σύστημα διαχείρισης ιατρείου για επαγγελματίες υγείας στην Κύπρο και την Ελλάδα. Ημερολόγιο, ασθενείς, σημειώσεις, τιμολόγηση, επικοινωνία και αναφορές.",
-                en: "Complete practice management for health professionals in Cyprus & Greece. Calendar, patients, notes, billing, communication, and reports.",
+                gr: "Πλήρες σύστημα διαχείρισης ιατρείου για επαγγελματίες υγείας στην Ελλάδα και την Κύπρο. Ημερολόγιο, ασθενείς, σημειώσεις, τιμολόγηση, επικοινωνία και αναφορές.",
+                en: "Complete practice management for health professionals in Greece & Cyprus. Calendar, patients, notes, billing, communication, and reports.",
               })}
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface-soft)] px-4 py-2 text-xs font-medium text-[var(--color-muted)]">
+              <span className="text-base">🇬🇷</span>
               <span className="text-base">🇨🇾</span>
-              {t({ gr: "Φτιαγμένο στην Κύπρο", en: "Made in Cyprus" })}
+              {t({ gr: "Ελλάδα & Κύπρος", en: "Greece & Cyprus" })}
             </div>
           </div>
 
