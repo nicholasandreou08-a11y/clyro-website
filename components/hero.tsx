@@ -91,11 +91,11 @@ export function Hero() {
         {/* Left: copy */}
         <div className="flex flex-col justify-center">
           {/* Eyebrow */}
-          <div className="animate-fade-in inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(59,130,246,0.16)] bg-white/80 px-4 py-2 text-sm text-[var(--color-muted)] shadow-[0_12px_30px_-24px_rgba(17,24,39,0.34)]">
-            <span className="rounded-full bg-[var(--color-blue)]/10 px-2.5 py-0.5 text-xs font-semibold text-[var(--color-blue-dark)]">
+          <div className="animate-fade-in inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(59,130,246,0.16)] bg-white/80 px-3 py-1.5 text-sm text-[var(--color-muted)] shadow-[0_12px_30px_-24px_rgba(17,24,39,0.34)] sm:px-4 sm:py-2">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-[var(--color-blue)]/10 px-2 py-0.5 text-xs font-semibold text-[var(--color-blue-dark)] sm:px-2.5">
               {t({ gr: "Ελλάδα & Κύπρος", en: "Greece & Cyprus" })}
             </span>
-            <span>{t({ gr: "Λογισμικό διαχείρισης ιατρείου", en: "Practice management software" })}</span>
+            <span className="text-xs sm:text-sm">{t({ gr: "Λογισμικό διαχείρισης ιατρείου", en: "Practice management software" })}</span>
           </div>
 
           {/* Headline */}

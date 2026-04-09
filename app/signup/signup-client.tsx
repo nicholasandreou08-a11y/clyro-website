@@ -4,13 +4,14 @@ import Link from "next/link";
 import { ArrowRight, Check, Shield, Smartphone, Clock } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { useLanguage } from "@/components/language-context";
+import { ScreenshotMockup } from "@/components/screenshot-mockup";
 import { CalendarMockup } from "@/components/app-mockups";
 import type { Language } from "@/lib/site-data";
 
 const trustBadges = [
   { icon: Check, text: { gr: "Χωρίς κάρτα", en: "No card required" } },
   { icon: Clock, text: { gr: "Έτοιμο σε 2 λεπτά", en: "Ready in 2 minutes" } },
-  { icon: Shield, text: { gr: "GDPR compliant", en: "GDPR compliant" } },
+  { icon: Shield, text: { gr: "Συμβατό με GDPR", en: "GDPR compliant" } },
   { icon: Smartphone, text: { gr: "Κάθε συσκευή", en: "Any device" } },
 ];
 
@@ -38,7 +39,7 @@ function SignupContent() {
           </h1>
           <p className="mt-4 max-w-lg text-lg text-[var(--color-muted)] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
             {t({
-              gr: "Δημιούργησε τον λογαριασμό σου σε 2 λεπτά. Δοκίμασε όλα τα features χωρίς δεσμεύσεις.",
+              gr: "Δημιούργησε τον λογαριασμό σου σε 2 λεπτά. Δοκίμασε όλες τις δυνατότητες χωρίς δεσμεύσεις.",
               en: "Create your account in 2 minutes. Try all features with no commitments.",
             })}
           </p>
@@ -86,10 +87,10 @@ function SignupContent() {
           </div>
         </div>
 
-        {/* Right: mockup */}
+        {/* Right: screenshot */}
         <div className="mt-12 flex items-center lg:mt-0">
-          <div className="animate-float w-full">
-            <CalendarMockup />
+          <div className="w-full">
+            <ScreenshotMockup moduleKey="calendar" fallback={CalendarMockup} />
           </div>
         </div>
       </section>
