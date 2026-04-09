@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, MapPin, Clock } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { Mail, MapPin, Clock, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { useLanguage } from "@/components/language-context";
 import type { Language } from "@/lib/site-data";
@@ -95,75 +96,7 @@ function ContactContent() {
       </section>
 
       {/* Contact form */}
-      <section className="mx-auto max-w-xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-[var(--radius-card)] border border-white/70 bg-white/90 p-8 shadow-[var(--shadow-card)]">
-          <h2 className="text-xl font-bold text-[var(--color-navy)] font-[var(--font-display)]">
-            {t({ gr: "Στείλε μήνυμα", en: "Send a message" })}
-          </h2>
-          <form className="mt-6 space-y-4" action="https://formspree.io/f/placeholder" method="POST">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-[var(--color-navy)]">
-                {t({ gr: "Όνομα", en: "Name" })}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue)]/20"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[var(--color-navy)]">
-                {t({ gr: "Email", en: "Email" })}
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue)]/20"
-              />
-            </div>
-            <div>
-              <label htmlFor="profession" className="block text-sm font-medium text-[var(--color-navy)]">
-                {t({ gr: "Επάγγελμα", en: "Profession" })}
-              </label>
-              <select
-                id="profession"
-                name="profession"
-                className="mt-1 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue)]/20"
-              >
-                <option value="">{t({ gr: "Επιλέξτε...", en: "Select..." })}</option>
-                <option value="physio">{t({ gr: "Φυσιοθεραπευτής", en: "Physiotherapist" })}</option>
-                <option value="dietician">{t({ gr: "Διαιτολόγος", en: "Dietician" })}</option>
-                <option value="psychologist">{t({ gr: "Ψυχολόγος", en: "Psychologist" })}</option>
-                <option value="doctor">{t({ gr: "Γιατρός", en: "Doctor" })}</option>
-                <option value="clinic">{t({ gr: "Κλινική", en: "Clinic" })}</option>
-                <option value="other">{t({ gr: "Άλλο", en: "Other" })}</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-[var(--color-navy)]">
-                {t({ gr: "Μήνυμα", en: "Message" })}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="mt-1 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue)]/20 resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full rounded-full bg-[var(--color-navy)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_24px_-16px_rgba(30,42,56,0.45)] transition-all hover:-translate-y-0.5 hover:bg-[var(--color-blue-dark)]"
-            >
-              {t({ gr: "Αποστολή", en: "Send" })}
-            </button>
-          </form>
-        </div>
-      </section>
+      <ContactForm />
 
       {/* Made in Cyprus badge */}
       <div className="py-12 text-center">
@@ -173,5 +106,136 @@ function ContactContent() {
         </div>
       </div>
     </>
+  );
+}
+
+const inputClass =
+  "mt-1 w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-sm text-[var(--color-text)] outline-none transition-colors focus:border-[var(--color-blue)] focus:ring-2 focus:ring-[var(--color-blue)]/20";
+
+function ContactForm() {
+  const { t } = useLanguage();
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      profession: (form.elements.namedItem("profession") as HTMLSelectElement).value || undefined,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("https://my.clyroapp.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const body = await res.json().catch(() => ({}));
+        setErrorMsg(body.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section className="mx-auto max-w-xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="rounded-[var(--radius-card)] border border-white/70 bg-white/90 p-8 shadow-[var(--shadow-card)]">
+        <h2 className="text-xl font-bold text-[var(--color-navy)] font-[var(--font-display)]">
+          {t({ gr: "Στείλε μήνυμα", en: "Send a message" })}
+        </h2>
+
+        {status === "success" ? (
+          <div className="mt-6 flex flex-col items-center gap-3 py-8 text-center">
+            <CheckCircle2 className="h-12 w-12 text-[var(--color-success)]" />
+            <p className="text-lg font-semibold text-[var(--color-navy)]">
+              {t({ gr: "Ευχαριστούμε!", en: "Thank you!" })}
+            </p>
+            <p className="text-sm text-[var(--color-muted)]">
+              {t({
+                gr: "Λάβαμε το μήνυμά σου. Θα επικοινωνήσουμε σύντομα.",
+                en: "We received your message. We'll get back to you soon.",
+              })}
+            </p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="mt-2 text-sm font-medium text-[var(--color-blue-dark)] hover:underline"
+            >
+              {t({ gr: "Στείλε άλλο μήνυμα", en: "Send another message" })}
+            </button>
+          </div>
+        ) : (
+          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-[var(--color-navy)]">
+                {t({ gr: "Όνομα", en: "Name" })}
+              </label>
+              <input type="text" id="name" name="name" required className={inputClass} />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-[var(--color-navy)]">
+                {t({ gr: "Email", en: "Email" })}
+              </label>
+              <input type="email" id="email" name="email" required className={inputClass} />
+            </div>
+            <div>
+              <label htmlFor="profession" className="block text-sm font-medium text-[var(--color-navy)]">
+                {t({ gr: "Επάγγελμα", en: "Profession" })}
+              </label>
+              <select id="profession" name="profession" className={inputClass}>
+                <option value="">{t({ gr: "Επιλέξτε...", en: "Select..." })}</option>
+                <option value="Physiotherapist">{t({ gr: "Φυσιοθεραπευτής", en: "Physiotherapist" })}</option>
+                <option value="Dietician">{t({ gr: "Διαιτολόγος", en: "Dietician" })}</option>
+                <option value="Psychologist">{t({ gr: "Ψυχολόγος", en: "Psychologist" })}</option>
+                <option value="Doctor">{t({ gr: "Γιατρός", en: "Doctor" })}</option>
+                <option value="Clinic">{t({ gr: "Κλινική", en: "Clinic" })}</option>
+                <option value="Other">{t({ gr: "Άλλο", en: "Other" })}</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-[var(--color-navy)]">
+                {t({ gr: "Μήνυμα", en: "Message" })}
+              </label>
+              <textarea id="message" name="message" rows={4} required className={`${inputClass} resize-none`} />
+            </div>
+
+            {status === "error" && (
+              <div className="flex items-center gap-2 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                {errorMsg}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="w-full rounded-full bg-[var(--color-navy)] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_24px_-16px_rgba(30,42,56,0.45)] transition-all hover:-translate-y-0.5 hover:bg-[var(--color-blue-dark)] disabled:opacity-60 disabled:hover:translate-y-0"
+            >
+              {status === "loading" ? (
+                <span className="inline-flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t({ gr: "Αποστολή...", en: "Sending..." })}
+                </span>
+              ) : (
+                t({ gr: "Αποστολή", en: "Send" })
+              )}
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
   );
 }
