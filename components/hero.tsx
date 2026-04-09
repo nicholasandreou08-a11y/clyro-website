@@ -17,7 +17,7 @@ const rotatingWords = {
     { prefix: "Ολόκληρο το", word: "ιατρείο", suffix: "σας." },
     { prefix: "Ολόκληρη η", word: "κλινική", suffix: "σας." },
     { prefix: "Ολόκληρο το", word: "κέντρο", suffix: "σας." },
-    { prefix: "Ολόκληρο το", word: "φυσιοθεραπευτήριο", suffix: "σας." },
+    { prefix: "Ολόκληρο το", word: "εργαστήριο", suffix: "σας." },
   ],
   en: [
     { prefix: "Your entire", word: "practice", suffix: "." },
