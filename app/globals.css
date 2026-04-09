@@ -153,22 +153,9 @@ textarea {
   animation: shimmer 4s linear infinite;
 }
 
-/* Scroll-triggered fade-in using animation-timeline (progressive enhancement) */
-@supports (animation-timeline: view()) {
-  .scroll-fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fade-in-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 30%;
-  }
-}
-
-/* Fallback for browsers without animation-timeline */
-@supports not (animation-timeline: view()) {
-  .scroll-fade-in {
-    animation: fade-in-up 0.6s ease-out both;
-  }
+/* Scroll-triggered fade-in — simple animation, no animation-timeline (broken in many Chrome builds) */
+.scroll-fade-in {
+  animation: fade-in-up 0.7s ease-out both;
 }
 
 /* Card hover effect */
