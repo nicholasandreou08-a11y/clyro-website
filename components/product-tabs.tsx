@@ -13,6 +13,7 @@ import {
   ReportsMockup,
   LettersMockup,
 } from "./app-mockups";
+import { ScreenshotMockup } from "./screenshot-mockup";
 
 const tabs = [
   { key: "calendar", label: { gr: "Ημερολόγιο", en: "Calendar" }, emoji: "📅" },
@@ -57,8 +58,8 @@ export function ProductTabs() {
         </h2>
         <p className="mt-3 text-base text-[var(--color-muted)] sm:text-lg">
           {t({
-            gr: "Εξερευνήστε τα modules του Clyro — κλικ σε κάθε tab για preview.",
-            en: "Explore Clyro\u2019s modules \u2014 click each tab for a preview.",
+            gr: "Κλικ σε κάθε module για preview.",
+            en: "Click each module for a preview.",
           })}
         </p>
       </div>
@@ -83,9 +84,12 @@ export function ProductTabs() {
         ))}
       </div>
 
-      {/* Mockup */}
-      <div className="mt-10 mx-auto max-w-4xl animate-scale-in" key={active}>
-        <Mockup />
+      {/* Screenshot (with CSS mockup fallback) */}
+      <div className="mt-10 mx-auto max-w-5xl animate-scale-in" key={active}>
+        <ScreenshotMockup
+          moduleKey={active}
+          fallback={Mockup}
+        />
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Shield, Smartphone, Zap } from "lucide-react";
 import { useLanguage } from "./language-context";
 import { CalendarMockup } from "./app-mockups";
+import { ScreenshotMockup } from "./screenshot-mockup";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -54,8 +55,8 @@ export function Hero() {
           {/* Subtitle */}
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-[var(--color-muted)] animate-fade-in-up" style={{ animationDelay: "100ms" }}>
             {t({
-              gr: "Ημερολόγιο, ασθενείς, κλινικές σημειώσεις, τιμολόγηση, επικοινωνία, AI και αναφορές — σε μια πλατφόρμα σχεδιασμένη για επαγγελματίες υγείας.",
-              en: "Calendar, patients, clinical notes, billing, messaging, AI, and analytics — in one platform built for health professionals.",
+              gr: "Ημερολόγιο, ασθενείς, σημειώσεις, τιμολόγηση, AI — μία πλατφόρμα για επαγγελματίες υγείας.",
+              en: "Calendar, patients, notes, billing, AI — one platform for health professionals.",
             })}
           </p>
 
@@ -92,10 +93,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right: app mockup */}
+        {/* Right: app screenshot carousel */}
         <div className="mt-12 flex items-center lg:mt-0">
           <div className="animate-float w-full">
-            <CalendarMockup />
+            <ScreenshotMockup
+              moduleKey="calendar"
+              fallback={CalendarMockup}
+            />
           </div>
         </div>
       </div>
