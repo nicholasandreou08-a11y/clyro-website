@@ -54,10 +54,8 @@ function RotatingHeadline() {
       <span
         key={idx}
         className={cn(
-          "inline-block",
-          phase === "in"
-            ? "animate-[word-rotate-in_0.4s_ease-out_both]"
-            : "animate-[word-rotate-out_0.3s_ease-in_both]",
+          "inline-block gradient-text",
+          phase === "in" ? "word-rotate-in" : "word-rotate-out",
         )}
       >
         {current.word}
@@ -101,10 +99,8 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="mt-6 max-w-xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[0.95] tracking-[-0.04em]">
-            <span className="gradient-text">
-              <RotatingHeadline />
-            </span>
+          <h1 className="mt-6 max-w-xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-[var(--color-navy)]">
+            <RotatingHeadline />
             <br />
             <span className="text-[var(--color-navy)]">
               {t({
