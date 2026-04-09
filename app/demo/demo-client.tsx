@@ -78,7 +78,7 @@ function DemoContent() {
         </p>
         <div className="mt-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
           <Link
-            href="https://my.clyroapp.com?demo=true"
+            href="https://my.clyroapp.com/demo/loading"
             className="inline-flex items-center gap-2 rounded-full bg-[var(--color-navy)] px-8 py-4 text-base font-semibold text-white shadow-[0_16px_32px_-16px_rgba(30,42,56,0.5)] transition-all hover:-translate-y-1 hover:bg-[var(--color-blue-dark)] hover:shadow-[0_20px_40px_-16px_rgba(30,42,56,0.55)] animate-pulse-glow"
           >
             <Play className="h-5 w-5" />
